@@ -6,8 +6,8 @@ const { Album, Artista, Cancion, Genero } = require('./db/models');
 
 const cancionRoutes = require('./routes/cancionRoutes');
 const generoRoutes = require('./routes/generoRoutes');
-const apiCancionRoutes = require('./routes/api/cancionRoutes');
-const apiGeneroRoutes = require('./routes/api/generoRoutes');
+const apiCancionRoutes = require('./routes/api/cancionApiRoutes');
+const apiGeneroRoutes = require('./routes/api/generoApiRoutes');
 const { log } = require('console');
 
 const app = express();
