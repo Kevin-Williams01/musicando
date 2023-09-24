@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Crear una cancion</h1>
+
+    <div class="form-container">
+        <form method="POST" action="/canciones">
+            <label for="">Titulo</label>
+            <input type="text" name="titulo" placeholder="Titulo">
+            <br>
+            <label for="">Duracion</label>
+            <input type="text" name="duracion" placeholder="Duracion">
+            <br>
+            <label for="">Genero_id</label>
+            <input type="number" name="genero" placeholder="Genero">
+            <br>
+            <label for="">Album_id</label>
+            <input type="number" name="album" placeholder="Album">
+            <br>
+            <label for="">Artista_id</label>
+            <input type="number" name="artista" placeholder="Artista">
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <h1>Listado de canciones</h1>
+
+    <ul style="list-style: none">
+        <h3>
+        <% for (let i=0; i < canciones.length; i++) { %>
+            <li>
+                <a href="/canciones/<%= canciones[i].id %>">
+                    <%= canciones[i].titulo %> - <%= canciones[i].artista.nombre %> <%= canciones[i].artista.apellido %>
+                            <% } %>
+                </a>
+            </li>
+        </ul>
+    </h3>
+
+</body>
+
+</html>
