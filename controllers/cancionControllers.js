@@ -40,7 +40,6 @@ module.exports = {
 
         try {
             let cancion = await Cancion.create(nuevaCancion, {
-                include: [{ association: 'album' }, { association: 'generoCancion' }, { association: 'artista' }],
                 nest: true,
                 raw: true
             })
@@ -51,7 +50,7 @@ module.exports = {
                             status: 201,
                             message: 'Cancion creada correctamente'
                         },
-                        data: cancion                        
+                        data: cancion
                     })
                 })
         } catch (error) {
@@ -93,6 +92,7 @@ module.exports = {
         } catch (error) {
             console.log(error);
             return res.status(404).json({
+                status: 404,
                 message: 'Cancion no encontrada'
             })
         }
@@ -127,6 +127,7 @@ module.exports = {
                 .then(function (cancion) {
                     if (!cancionBuscada) {
                         return res.status(404).json({
+                            status: 404,
                             message: 'Cancion no encontrada'
                         })
                     } else {
