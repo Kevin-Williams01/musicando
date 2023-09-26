@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const generoApiControllers = require('../controllers/generoControllers');
+const generoControllers = require('../controllers/generoControllers');
 
-// @GET - /api/generos
-router.get('/', generoApiControllers.getList);
+// @GET - /generos
+router.get('/', generoControllers.getList);
 
 module.exports = router;

@@ -1,23 +1,23 @@
 const express = require('express');
 const router = express.Router();
 
-const cancionApiControllers = require('../controllers/cancionControllers');
+const cancionControllers = require('../controllers/cancionControllers');
 
 
-// @GET - /api/canciones
-router.get('/', cancionApiControllers.getList);
+// @GET - /canciones
+router.get('/', cancionControllers.getList);
 
-// @POST - /api/canciones
-router.post('/', cancionApiControllers.createOne);
+// @POST - /canciones
+router.post('/', cancionControllers.createOne);
 
-// @GET - /api/canciones/:id
-router.get('/:id', cancionApiControllers.getDetail);
+// @GET - /canciones/:id
+router.get('/:id', cancionControllers.getDetail);
 
-// @PUT - /api/canciones/:id
-router.put('/:id', cancionApiControllers.updateOne);
+// @PUT - /canciones/:id
+router.put('/:id', cancionControllers.updateOne);
 
-// @DELETE - /api/canciones/:id
-router.delete('/:id', cancionApiControllers.deleteOne);
+// @DELETE - /canciones/:id
+router.delete('/:id', cancionControllers.deleteOne);
 
 
 module.exports = router;
